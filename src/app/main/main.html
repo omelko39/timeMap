@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="col-md-5">
+    <ui-gmap-google-map center='main.map.center' zoom='main.map.zoom' events="main.map.events"></ui-gmap-google-map>
+  </div>
+
+
+  <div class="list-group col-md-5">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Clock</h3>
+      </div>
+      <div class="panel-body">
+        <div ng-repeat="time in main.clocks track by $index" style="float: left; padding-right: 10px">
+          <span class="glyphicon glyphicon-remove" ng-click="main.deleteClock($index)">{{time.zoneName}}</span>
+          <ds-widget-clock start-time="time.timestamp" show-analog></ds-widget-clock>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
